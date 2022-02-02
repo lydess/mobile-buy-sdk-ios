@@ -802,7 +802,6 @@ Before you display products to the user, you typically need to obtain various me
 let query = Storefront.buildQuery { $0
     .shop { $0
         .name()
-        .currencyCode()
         .refundPolicy { $0
             .title()
             .url()
@@ -877,7 +876,6 @@ The corresponding GraphQL query looks like this:
 
 ```swift
 {
-  shop {
     collections(first: 10) {
       edges {
         node {
@@ -896,7 +894,7 @@ The corresponding GraphQL query looks like this:
         }
       }
     }
-  }
+
 }
 ```
 
